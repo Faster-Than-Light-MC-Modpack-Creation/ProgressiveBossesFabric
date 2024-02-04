@@ -103,7 +103,7 @@ public class DifficultyFeature implements LabelConfigGroup {
 				if (difficulty.getSpawnedWithers() >= this.maxDifficulty)
 					return;
 				if (difficulty.getSpawnedWithers() <= this.startingDifficulty && this.showFirstSummonedWitherMessage)
-					player.sendMessage(MutableText.of(new TranslatableTextContent(Strings.Translatable.FIRST_WITHER_SUMMON, null, null)), false);
+					player.sendMessage(MutableText.of(new TranslatableTextContent(Strings.Translatable.FIRST_WITHER_SUMMON, "translate error at FIRST_WITHER_SUMMON", new Object[]{})), false);
 				difficulty.addSpawnedWithers(1);
 				System.out.println("[Progressive Bosses] Player " + player.getName().getString() + " spawned a Wither. Difficulty: " + difficulty.getSpawnedWithers());
 			});

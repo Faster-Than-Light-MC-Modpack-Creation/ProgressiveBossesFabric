@@ -192,7 +192,7 @@ public class MinionFeature implements LabelConfigGroup {
 		boolean isBlindingMinion = world.getRandom().nextDouble() < this.blindingChance * difficulty;
 
 		shulker.setPosition(pos.x, pos.y, pos.z);
-		shulker.setCustomName(MutableText.of(new TranslatableTextContent(Strings.Translatable.DRAGON_MINION, null, null)));
+		shulker.setCustomName(MutableText.of(new TranslatableTextContent(Strings.Translatable.DRAGON_MINION, "translate error at DRAGON_MINION", new Object[]{})));
 		shulker.lootTable = LootTables.EMPTY;
 		shulker.setPersistent();
 		DragonMinionHelper.setMinionColor(shulker, isBlindingMinion);

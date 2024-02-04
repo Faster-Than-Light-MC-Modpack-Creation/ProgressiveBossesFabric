@@ -60,7 +60,7 @@ public class BaseFeature implements LabelConfigGroup {
 			serverPlayer.interactionManager.changeGameMode(GameMode.ADVENTURE);
 			serverPlayer.networkHandler.sendPacket(new GameStateChangeS2CPacket(GameStateChangeS2CPacket.GAME_MODE_CHANGED, (float)GameMode.ADVENTURE.getId()));
 			if (!adventureMessage) {
-				serverPlayer.sendMessage(MutableText.of(new TranslatableTextContent(Strings.Translatable.APPROACHING_ELDER_GUARDIAN, null, null)), false);
+				serverPlayer.sendMessage(MutableText.of(new TranslatableTextContent(Strings.Translatable.APPROACHING_ELDER_GUARDIAN, "translate error at APPROACHING_ELDER_GUARDIAN", new Object[]{})), false);
 				nbt.putBoolean(Strings.Tags.ADVENTURE_MESSAGE, true);
 			}
 		}

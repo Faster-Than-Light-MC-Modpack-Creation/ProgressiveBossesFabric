@@ -21,6 +21,7 @@ import net.minecraft.entity.boss.dragon.EnderDragonEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.MutableText;
+import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableTextContent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
@@ -128,7 +129,9 @@ public class DifficultyFeature implements LabelConfigGroup {
 		for (ServerPlayerEntity player : players) {
 			AComponents.DF.maybeGet(player).ifPresent(difficulty -> {
 				if (difficulty.getKilledDragons() <= this.startingDifficulty && this.showFirstKilledDragonMessage)
-					player.sendMessage(MutableText.of(new TranslatableTextContent(Strings.Translatable.FIRST_DRAGON_KILL, null, null)), true);
+				{
+					player.sendMessage(MutableText.of(new TranslatableTextContent(Strings.Translatable.FIRST_DRAGON_KILL, "translate error at FIRST_DRAGON_KILL", new Object[]{} )), true);
+				}
 				if (difficulty.getKilledDragons() < this.maxDifficulty)
 					difficulty.addKilledDragons(1);
 			});

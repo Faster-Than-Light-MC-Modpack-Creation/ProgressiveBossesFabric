@@ -115,7 +115,7 @@ public class MinionFeature implements LabelConfigGroup {
 		minionTags.putBoolean(Strings.Tags.ELDER_MINION, true);
 
 		elderMinion.setPosition(pos.x, pos.y, pos.z);
-		elderMinion.setCustomName(MutableText.of(new TranslatableTextContent(Strings.Translatable.ELDER_MINION, null, null)));
+		elderMinion.setCustomName(MutableText.of(new TranslatableTextContent(Strings.Translatable.ELDER_MINION, "translate error at ELDER_MINION", new Object[]{})));
 		elderMinion.lootTable = LootTables.EMPTY;
 
 		MCUtils.applyModifier(elderMinion, EntityAttributes.GENERIC_MOVEMENT_SPEED, Strings.AttributeModifiers.SWIM_SPEED_BONUS_UUID, Strings.AttributeModifiers.SWIM_SPEED_BONUS, 2d, EntityAttributeModifier.Operation.MULTIPLY_BASE);
